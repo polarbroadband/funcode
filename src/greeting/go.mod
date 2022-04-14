@@ -1,4 +1,4 @@
-module main
+module greeting
 
 go 1.18
 
