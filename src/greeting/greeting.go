@@ -20,7 +20,7 @@ func greeting(w http.ResponseWriter, r *http.Request) {
 			if intVar, err := strconv.Atoi(serve[0]); err == nil { // convert string to int
 				// call function <<ingredients>> in python module <<pt.py>>
 				// passing arguments
-				cmd := exec.Command("python3", "-c", fmt.Sprintf("import pt; print(pt.ingredients('%v', %v))", dish[0], intVar))
+				cmd := exec.Command("python", "-c", fmt.Sprintf("import pt; print(pt.ingredients('%v', %v))", dish[0], intVar))
 				fmt.Println(cmd.Args)
 				// retrieve pthon function return values
 				if out, err := cmd.CombinedOutput(); err == nil {
